@@ -11,7 +11,7 @@ In this lab demonsrates **Custom Training with Pre built Container** using sciki
 ### Step-01-01: Create VPC Security Group (for RDS)
 Create Vertex AI instance in a region e.g. us-east1
 
-#### Get the EKS Cluster Security Group
+
 Copy code in `sentiment_scikit_pre_trained` to cloud bucket
 
 ---
