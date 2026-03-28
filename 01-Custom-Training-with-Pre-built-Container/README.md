@@ -37,4 +37,12 @@ Create Vertex AI training pipeline
 - Specify package location in cloud storage tar file generate in previous step
 - Python module: `trainer.task` as task.py is located here
 - Select all other paratmeters as required
+After training is finished (approximately in 10-12 mins) outputs will be stored at `gs://vertex-ai-rxperiments-01/01-custom-training-with-prebuilt-container/model-output-dir/sentiment_model`
+
+## Step-04:  Importing and deploying the model
+As this is custom training we need to manually import and model to **Model Registry** from the path given in previous step.
+
+Once model is imported after while (approximately in 10-12 mins) it can be then deployed.
+
+Deploy model to endpoint select parameter as required particularly machine type based on you budget. For learning machine with 2 vcpu and 7.5 GB of memory is sufficient
 
