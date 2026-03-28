@@ -44,5 +44,26 @@ As this is custom training we need to manually import and model to **Model Regis
 
 Once model is imported after while (approximately in 10-12 mins) it can be then deployed.
 
-Deploy model to endpoint select parameter as required particularly machine type based on you budget. For learning machine with 2 vcpu and 7.5 GB of memory is sufficient
+Deploy model to endpoint select parameter as required particularly machine type based on you budget. For learning, machine with 2 vcpu and 7.5 GB of memory is sufficient
 
+## Step-05:  Testing model
+
+Create `request.json` with following content 
+```
+{
+  "instances": [
+    "I love this movie",
+    "It was terrible",
+    "It was ok",
+    "Best movie ever"
+  ]
+}
+```
+
+Set following variables
+
+```
+ENDPOINT_ID="<<>>"
+PROJECT_ID="<<>>"
+INPUT_DATA_FILE="path/to/your/input.json"
+```
