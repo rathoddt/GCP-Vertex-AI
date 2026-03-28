@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 # -----------------------------
 # Load dataset
 # -----------------------------
-df = pd.read_csv("gs://vertex-ai-rxperiments-01/01-custom-training-with-prebuilt-container/input-file/sentiment-analysis-input-10000.csv")   
+df = pd.read_csv("gs://<your-bucket-name>/<your-dataset-full-path-inside-bucket>")   
 # columns: sentiment, label
 
 # Map labels
@@ -49,15 +49,9 @@ model.compile(loss="sparse_categorical_crossentropy",
               metrics=["accuracy"])
 
 # Train
-model.fit(X_train, y_train, epochs=1, validation_data=(X_test, y_test))
+model.fit(X_train, y_train, epochs=2, validation_data=(X_test, y_test))
 
-texts=["I love this movie", "It was terrible", "It was ok"]
-
-preds=model.predict(texts)
-lables=["negative", "neutral", "positive"]
-for text,pred in zip(texts, preds):
-    print(f"{text} -> {lables[pred.argmax()]}")
 # -----------------------------
 # Save entire pipeline
 # -----------------------------
-model.save("gs://vertex-ai-rxperiments-01/01-custom-training-with-prebuilt-container/model-output-dir/sentiment_model")  # includes vectorizer + LSTM
+model.save("gs://<your-bucket-name>/<location-inside-bucket>/sentiment_model")  # includes vectorizer + LSTM
